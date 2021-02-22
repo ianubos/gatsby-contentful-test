@@ -13,10 +13,11 @@ const accesstoken = process.env.CONTENTFUL_ACCESS_TOKEN
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: 'full-stack bootcamp',
+    title: 'full-stack bootcamper',
     author: 'dragon'
   },
   plugins: [
+    'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-contentful',
       options: {
