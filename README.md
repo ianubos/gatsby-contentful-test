@@ -17,9 +17,8 @@
  npm run develop
  ```
  
-
-
-
+ ## デプロイ後
+ contentfulで投稿・編集を行ったら、netlifyでcacheのクリアをする必要あり。
 
 
 
