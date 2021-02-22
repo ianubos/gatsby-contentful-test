@@ -25,11 +25,12 @@ module.exports = {
       }
     },
     'gatsby-plugin-sass',
+    `gatsby-transformer-json`,
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'posts',
-        path: `${__dirname}/src/posts/`
+        path: `${__dirname}/src/`
       }
     },
     'gatsby-plugin-sharp',

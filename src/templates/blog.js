@@ -17,34 +17,44 @@ import Layout from '../components/layout'
 // `
 
 export const query = graphql`
-    query ($slug: String!) {
+    query($slug: String!) {
         contentfulBlogPost2 (slug: {eq: $slug}) {
             title
-            publishedDate(formatString: "MMMM Do, YYYY")
+            publishedDate (formatString: "YYYY年MM月DD日")
             body {
                 raw
+                references {
+                    title
+                    contentful_id
+                    fixed(width: 1600) {
+                        width
+                        height
+                        src
+                    }
+                }
             }
         }
     }
 `
 
 function Blog(props) {
-    console.log(JSON.stringify(props.data.contentfulBlogPost2.body.raw))
+    const post = props.data.contentfulBlogPost2
+    const { references } = post.body
     const options = {
         renderNode: {
             'embedded-asset-block': (node) => {
-                const alt = node.data.target.fields.title['en-US']
-                const url = node.data.target.fields.file['en-US'].url
-                return <img alt={alt} src={url} />
+                const referenceImage = references.filter(reference => 
+                    reference.contentful_id === node.data.target.sys.id
+                )[0]
+                return <img src={referenceImage.fixed.src} alt={referenceImage.title}/>
             }
         }
     }
     return (
         <Layout>
-            <h1>{props.data.contentfulBlogPost2.title}</h1>
-            <p>{props.data.contentfulBlogPost2.publishedDate}</p>
-            {documentToReactComponents(JSON.parse(props.data.contentfulBlogPost2.body.raw))}
-            {/* <div dangerouslySetInnerHTML={{__html: props.data. }}></div> */}
+            <h1>{post.title}</h1>
+            <p>{post.publishedDate}</p>
+            {documentToReactComponents(JSON.parse(props.data.contentfulBlogPost2.body.raw), options)}
         </Layout>
     )
 }
