@@ -20,7 +20,11 @@
  ## デプロイ後
  contentfulで投稿・編集を行ったら、netlifyでcacheのクリアをする必要あり。
 
-
+## netlifyデプロイでつまづいた修正点
+```
+Error “gatsby-remark-relative-images” threw an error while running the onCreateNode lifecycle
+```
+'gatsby-remark-relative-images'をgatsby-config.jsから削除。かわりにgatsby-remark-images-contentfulを使用。
 
 
 
