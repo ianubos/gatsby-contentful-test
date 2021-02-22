@@ -1,3 +1,24 @@
+## 設定
+※windowsでの設定のためmacと互換しない可能性あり。その際はREADME.mdに追記。
+1. rootディレクトリで以下のコマンドを実行
+ ```
+ git clone ...
+ npm install -g gatsby-cli
+ npm install
+ ```
+ 2. スタートコマンドでlocalhost:8000にページが立ち上がる
+ ```
+ npm run develop
+ ```
+ 
+
+
+
+
+
+
+
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.com">
