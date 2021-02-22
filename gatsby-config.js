@@ -30,10 +30,18 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'posts',
+        name: 'src',
         path: `${__dirname}/src/`
       }
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'static',
+        path: `${__dirname}/static/`
+      }
+    },
+    `gatsby-transformer-sharp`,
     'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-transformer-remark',
