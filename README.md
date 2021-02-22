@@ -19,6 +19,7 @@
  
  ## デプロイ後
  contentfulで投稿・編集を行ったら、netlifyでcacheのクリアをする必要あり。
+ [webhook](https://www.contentful.com/developers/docs/tutorials/general/automate-site-builds-with-webhooks/)で対応可能だった。
 
 ## netlifyデプロイでつまづいた修正点
 ```
