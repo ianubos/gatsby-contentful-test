@@ -2,8 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
 import { graphql, useStaticQuery } from 'gatsby'
-// import ImageSrc from '../../assets/images/firstview.jpg'
-// import ImageOptimizer from '../../utils/image'
 
 const FirstViewStyle = styled.section`
     min-height: 700px;
@@ -22,7 +20,7 @@ function FirstView() {
     query {
         file(relativePath: { eq: "images/firstview.jpg" }) {
         childImageSharp {
-            fluid(maxWidth: 800, quality: 75) {
+            fluid(maxWidth: 1920, quality: 100) {
             ...GatsbyImageSharpFluid
             }
         }
@@ -31,7 +29,7 @@ function FirstView() {
     `)
     return (
         <FirstViewStyle>
-            <h1>ファーストビュー</h1>
+            {/* <h1>ファーストビュー</h1> */}
             <Img fluid={data.file.childImageSharp.fluid} alt=""/>
         </FirstViewStyle>
     )
