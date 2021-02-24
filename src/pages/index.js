@@ -1,17 +1,24 @@
 import React from "react"
-import { Link } from "gatsby"
+import styled from 'styled-components'
+import Layout from '../components/layout/layout'
 
-import Layout from '../components/layout'
-import Head from '../components/head'
+import FirstView from '../components/index/FirstView'
+
+const IndexStyle = styled.section`
+    h1 {
+        font-size: 32px;
+    }
+    p {
+        font-size: 18px;
+    }
+`
 
 const IndexPage = () => {
     return (
-        <Layout>
-            <Head title="home"/>
-            <h1>hello</h1>
-            <h2>this is demo</h2>
-            <Link to='contact'>Contact</Link>
-            <Link to='about'>About</Link>
+        <Layout pageTitle="Home">
+            <IndexStyle>
+                <FirstView />
+            </IndexStyle>
         </Layout>
     )
 }

@@ -1,13 +1,24 @@
 import React from 'react'
+import styled from 'styled-components'
+import Layout from '../components/layout/layout'
 
-import Footer from '../components/footer'
+const ContactStyle = styled.section`
+    h1 {
+        font-size: 32px;
+    }
+    p {
+        font-size: 18px;
+    }
+`
+
 
 function ContactPage() {
     return (
-        <div>
-            <h1>Contact Page</h1>
-            <Footer />
-        </div>
+        <Layout pageTitle="Contact">
+            <ContactStyle>
+                <h1>Contact Page</h1>
+            </ContactStyle>
+        </Layout>
     )
 }
 
