@@ -27,7 +27,9 @@ Error “gatsby-remark-relative-images” threw an error while running the onCre
 ```
 'gatsby-remark-relative-images'をgatsby-config.jsから削除。かわりにgatsby-remark-images-contentfulを使用。
 
-
+## その他
+ ### 画像の取得
+ [公式の解説](https://www.gatsbyjs.com/docs/recipes/working-with-images/)
 
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">

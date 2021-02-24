@@ -1,18 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
+import Img from 'gatsby-image'
+import { graphql, useStaticQuery } from 'gatsby'
 // import ImageSrc from '../../assets/images/firstview.jpg'
-
-export const data = graphql`
-  query {
-    fileName: file(relativePath: { eq: "../../assets/images/firstview.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 400, maxHeight: 250) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-`
+// import ImageOptimizer from '../../utils/image'
 
 const FirstViewStyle = styled.section`
     min-height: 700px;
@@ -24,23 +15,24 @@ const FirstViewStyle = styled.section`
         font-size: 48px;
         font-weight: 600;
     }
-    .background {
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 700px;
-        width: 100%;
-    }
 `
 
 function FirstView() {
+    const data = useStaticQuery(graphql`
+    query {
+        file(relativePath: { eq: "images/firstview.jpg" }) {
+        childImageSharp {
+            fluid(maxWidth: 800, quality: 75) {
+            ...GatsbyImageSharpFluid
+            }
+        }
+        }
+    }
+    `)
     return (
         <FirstViewStyle>
             <h1>ファーストビュー</h1>
-            <div className="background">
-                <img src="../../../images/firstview.jpg" />
-            </div>
-            {/* <Img fluid={data.fileName.childImageSharp.fluid} alt="" /> */}
+            <Img fluid={data.file.childImageSharp.fluid} alt=""/>
         </FirstViewStyle>
     )
 }
