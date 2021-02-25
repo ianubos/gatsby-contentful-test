@@ -1,7 +1,6 @@
 import React from "react"
 import styled from 'styled-components'
 import Layout from '../components/layout/layout'
-
 import FirstView from '../components/index/FirstView'
 
 const IndexStyle = styled.section`

@@ -17,7 +17,7 @@ const HeaderStyle = styled.header`
     div {
         height: 100%;
         display: flex;
-        align-items: center;
+        align-items: baseline;
         justify-content: space-between;
         h1 {
             a {
