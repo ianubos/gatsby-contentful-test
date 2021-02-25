@@ -6,7 +6,7 @@
  npm install -g gatsby-cli
  npm install
  ```
- 2. .envファイルをrootディレクトリに追加
+ 2. .envファイルをrootディレクトリに追加  
  .env
  ```
  CONTENTFUL_ACCESS_TOKEN=your_access_token
