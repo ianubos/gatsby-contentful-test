@@ -30,14 +30,14 @@ Error “gatsby-remark-relative-images” threw an error while running the onCre
 ## その他
  ### 画像の扱い方
  [公式の解説](https://www.gatsbyjs.com/docs/recipes/working-with-images/)
- ```
+ ```jsx
  <Img
     fluid={data.firstview.childImageSharp.fluid} 
     alt="first view" 
     className="image" 
   />
  ```
- ```
+ ```scss
    .image {
       width: 100%;
       min-height: 500px !important;
