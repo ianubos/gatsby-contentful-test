@@ -30,6 +30,9 @@ Error “gatsby-remark-relative-images” threw an error while running the onCre
 ## その他
  ### 画像の取得
  [公式の解説](https://www.gatsbyjs.com/docs/recipes/working-with-images/)
+ 
+ ### contentfulのwebhook
+ [公式解説](https://www.contentful.com/developers/docs/tutorials/general/automate-site-builds-with-webhooks/)
 
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
