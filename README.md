@@ -31,11 +31,25 @@ Error “gatsby-remark-relative-images” threw an error while running the onCre
  ### 画像の扱い方
  [公式の解説](https://www.gatsbyjs.com/docs/recipes/working-with-images/)
  ```jsx
- <Img
-    fluid={data.firstview.childImageSharp.fluid} 
-    alt="first view" 
-    className="image" 
-  />
+    const data = useStaticQuery(graphql`
+    query {
+        firstview: file(relativePath: { eq: "oversuspention.jpg" }) {
+            childImageSharp {
+                fluid(maxWidth: 1920, quality: 100) {
+                    ...GatsbyImageSharpFluid
+                }
+            }
+        }
+    }
+    `)
+    return (
+        <FirstViewStyle>
+            <Img
+                fluid={data.firstview.childImageSharp.fluid} 
+                alt="first view" 
+                className="image" />
+        </FirstViewStyle>
+    )
  ```
  ```scss
    .image {
