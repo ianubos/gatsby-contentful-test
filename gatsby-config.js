@@ -27,11 +27,20 @@ module.exports = {
     },
     'gatsby-plugin-sass',
     `gatsby-transformer-json`,
+    `gatsby-transformer-sharp`,
+    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'src',
-        path: `${__dirname}/src/`
+        name: 'posts',
+        path: `${__dirname}/src/posts`
+      }
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: `${__dirname}/src/images`
       }
     },
     {
@@ -41,8 +50,6 @@ module.exports = {
         path: `${__dirname}/static/`
       }
     },
-    `gatsby-transformer-sharp`,
-    'gatsby-plugin-sharp',
     {
       resolve: `gatsby-transformer-remark`,
       options: {
