@@ -28,8 +28,45 @@ Error “gatsby-remark-relative-images” threw an error while running the onCre
 'gatsby-remark-relative-images'をgatsby-config.jsから削除。かわりにgatsby-remark-images-contentfulを使用。
 
 ## その他
- ### 画像の取得
+ ### 画像の扱い方
  [公式の解説](https://www.gatsbyjs.com/docs/recipes/working-with-images/)
+ ```jsx
+    const data = useStaticQuery(graphql`
+    query {
+        firstview: file(relativePath: { eq: "oversuspention.jpg" }) {
+            childImageSharp {
+                fluid(maxWidth: 1920, quality: 100) {
+                    ...GatsbyImageSharpFluid
+                }
+            }
+        }
+    }
+    `)
+    return (
+        <FirstViewStyle>
+            <Img
+                fluid={data.firstview.childImageSharp.fluid} 
+                alt="first view" 
+                className="image" />
+        </FirstViewStyle>
+    )
+ ```
+ ```scss
+   .image {
+      width: 100%;
+      min-height: 500px !important;
+      // picture {
+      //     max-height: 100%;
+      //     height: 450px;
+      //     img {
+      //         width: 100%;
+      //         height: 100px;
+      //         object-fit: cover;
+      //     }
+      // }
+    }
+ ```
+ 
  
  ### contentfulのwebhook
  [公式解説](https://www.contentful.com/developers/docs/tutorials/general/automate-site-builds-with-webhooks/)
