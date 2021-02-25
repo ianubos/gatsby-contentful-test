@@ -12,7 +12,7 @@ const FooterStyle = styled.footer`
         box-sizing: border-box;
         bottom: 5px;
         width: 100%;
-        text-align: right;
+        text-align: center;
         padding-right: 10px;
         font-size: 14px;
     }

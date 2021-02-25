@@ -4,31 +4,32 @@ import Img from 'gatsby-image'
 import { graphql, useStaticQuery } from 'gatsby'
 
 const FirstViewStyle = styled.section`
-    min-height: 700px;
     // background: #333;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    border: solid 2px red;
+    position: relative;
     h1 {
         font-size: 48px;
         font-weight: 600;
         position: absolute;
         top: 50%;
         left: 5%;
-        color: white;
+        color: #fff;
+        z-index: 10;
     }
     .image {
-        // max-height: 1024px;
-        border: solid 2px green;
         width: 100%;
-        height: 100%;
-        overflow: hidden;
-        picture img {
-            object-fit: cover;
-            width: 100%;
-            min-height: 100%;
-        }
+        min-height: 500px !important;
+        // picture {
+        //     max-height: 100%;
+        //     height: 450px;
+        //     img {
+        //         width: 100%;
+        //         height: 100px;
+        //         object-fit: cover;
+        //     }
+        // }
     }
 `
 
@@ -48,7 +49,10 @@ function FirstView() {
     return (
         <FirstViewStyle>
             <h1>ファーストビュー</h1>
-            <Img fluid={data.firstview.childImageSharp.fluid} alt="first view" className="image" />
+            <Img
+                fluid={data.firstview.childImageSharp.fluid} 
+                alt="first view" 
+                className="image" />
         </FirstViewStyle>
     )
 }

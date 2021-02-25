@@ -13,7 +13,7 @@ const HeaderStyle = styled.header`
     // background: rgba(10,10,10,0.9);
     width: 100%;
     height: 80px;
-    padding: 15px;
+    padding: 30px 20px;
     div {
         height: 100%;
         display: flex;
